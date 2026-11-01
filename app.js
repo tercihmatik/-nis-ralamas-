@@ -30,4 +30,18 @@ function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&l
 $("clearSearch").onclick=()=>{$("search").value="";render()};
 document.querySelectorAll("[data-query]").forEach(b=>b.onclick=()=>{$("search").value=b.dataset.query;render();$("kesfet").scrollIntoView({behavior:"smooth"})});
 $("csvFile").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{programs=parseCSV(await file.text());render();}catch(err){alert("CSV dosyası okunamadı. Şablondaki sütun adlarını kontrol et.")}});
-render();
+async function loadData() {
+  try {
+    const response = await fetch("./programs.csv");
+    if (!response.ok) throw new Error("CSV yüklenemedi");
+
+    const csv = await response.text();
+    programs = parseCSV(csv);
+    render();
+  } catch (error) {
+    console.error("Veri yükleme hatası:", error);
+    alert("Veriler yüklenemedi. CSV dosyasını kontrol et.");
+  }
+}
+
+loadData();
