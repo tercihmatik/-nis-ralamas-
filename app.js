@@ -43,5 +43,5 @@ async function loadData() {
     alert("Veriler yüklenemedi. CSV dosyasını kontrol et.");
   }
 }
-
+console.log("MEDA: Arama sistemi başlatıldı");
 loadData();
