@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Türkiye'deki üniversite ve bölümleri; başarı sırası, taban puan, kontenjan ve yıllara göre karşılaştırma ile araştırın.">
+  <meta name="theme-color" content="#101827">
+  <title>ÜNİTER | Üniversite ve Bölüm Rehberi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./"><span class="brand-mark">Ü</span><span>ÜNİTER<small>ÜNİVERSİTE REHBERİ</small></span></a>
+  <nav><a href="#kesfet">Bölümleri keşfet</a><a href="#hakkinda">Hakkında</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow"><span></span> TÜRKİYE'NİN ÜNİVERSİTE ARAMA PLATFORMU</div>
+    <h1>Geleceğini <em>bilgiyle</em> seç.</h1>
+    <p class="hero-copy">Üniversiteleri ve bölümleri karşılaştır. Başarı sıralamalarını, taban puanlarını ve kontenjanları tek yerde incele.</p>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input id="search" type="search" placeholder="Örn. Hukuk, İstanbul Teknik Üniversitesi..." autocomplete="off">
+      <button id="clearSearch" class="clear" aria-label="Aramayı temizle">×</button>
+    </div>
+    <div class="quick-search"><span>Popüler aramalar</span><button data-query="Hukuk">Hukuk</button><button data-query="Tıp">Tıp</button><button data-query="Bilgisayar Mühendisliği">Bilgisayar Müh.</button><button data-query="İstanbul Teknik">İTÜ</button></div>
+  </section>
+
+  <section class="content" id="kesfet">
+    <div class="section-head">
+      <div><div class="eyebrow dark">PROGRAM ARAŞTIRMA</div><h2>Üniversiteleri karşılaştır</h2><p>Aramanı yap, filtrele ve başarı sırasına göre düzenle.</p></div>
+      <label class="year-select">Veri yılı <select id="year"><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select></label>
+    </div>
+
+    <div class="filters">
+      <label>Üniversite türü<select id="kind"><option value="">Tümü</option><option>Devlet</option><option>Vakıf</option></select></label>
+      <label>Puan türü<select id="scoreType"><option value="">Tümü</option><option>SAY</option><option>EA</option><option>SÖZ</option><option>DİL</option><option>TYT</option></select></label>
+      <label>Şehir<input id="city" placeholder="Şehir yaz"></label>
+      <label>Sıralama<select id="sort"><option value="rank">Başarı sırası (iyiden kötüye)</option><option value="rank-desc">Başarı sırası (kötüden iyiye)</option><option value="score">Taban puan (yüksekten düşüğe)</option><option value="name">Üniversite adına göre</option></select></label>
+    </div>
+
+    <div class="results-meta"><span id="resultCount">Henüz veri yüklenmedi</span><label class="upload-label">Veri dosyası yükle <input id="csvFile" type="file" accept=".csv,text/csv"></label></div>
+    <div class="table-shell">
+      <table>
+        <thead><tr><th>ÜNİVERSİTE / PROGRAM</th><th>ŞEHİR</th><th>PUAN TÜRÜ</th><th>TABAN PUAN</th><th>BAŞARI SIRASI</th><th>KONTENJAN</th></tr></thead>
+        <tbody id="results"><tr><td colspan="6" class="empty"><div class="empty-icon">⌕</div><strong>Henüz program verisi eklenmedi</strong><p>Resmî kaynaklardan doğrulanmış CSV dosyasını yüklediğinde sonuçlar burada listelenecek.</p></td></tr></tbody>
+      </table>
+    </div>
+    <p class="data-note">Bilgilendirme: Bu platform resmî kurum değildir. Veriler yayımlanmadan önce kaynak ve yıl bilgisi kontrol edilmelidir. Boş alanlar sıfır olarak yorumlanmaz.</p>
+  </section>
+
+  <section class="features" id="hakkinda">
+    <article><div class="feature-icon">⌕</div><h3>Akıllı arama</h3><p>Bölüm veya üniversite adına göre Türkiye genelinde sonuçları bul.</p></article>
+    <article><div class="feature-icon">↕</div><h3>Gerçek sıralama</h3><p>Programları başarı sırasına göre karşılaştır; sıralamanın ne ifade ettiğini gör.</p></article>
+    <article><div class="feature-icon">▤</div><h3>Yıllara göre inceleme</h3><p>Farklı yılların verilerini aynı program için karşılaştırmaya hazır altyapı.</p></article>
+  </section>
+</main>
+<footer><a class="brand footer-brand" href="./"><span class="brand-mark">Ü</span><span>ÜNİTER<small>ÜNİVERSİTE REHBERİ</small></span></a><span>Veri doğruluğu ve kaynak şeffaflığı önceliğimizdir.</span></footer>
+<script src="app.js"></script>
+</body>
+</html>
